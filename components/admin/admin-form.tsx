@@ -13,24 +13,25 @@ export function Input({ label, error, helperText, className = "", ...props }: In
   return (
     <div className="space-y-1.5">
       {label && (
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-200">
           {label}
-          {props.required && <span className="text-red-500 ml-1">*</span>}
+          {props.required && <span className="text-red-400 ml-1">*</span>}
         </label>
       )}
       <input
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
-          focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
-          disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
+          placeholder-gray-400
+          focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500
+          disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed
           transition-all
-          ${error ? "border-red-300 focus:ring-red-500/20 focus:border-red-500" : "border-gray-200"}
+          ${error ? "border-red-400 focus:ring-red-500/30 focus:border-red-500" : "border-gray-300"}
           ${className}
         `}
         {...props}
       />
-      {error && <p className="text-xs text-red-500">{error}</p>}
-      {helperText && !error && <p className="text-xs text-gray-500">{helperText}</p>}
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      {helperText && !error && <p className="text-xs text-gray-400">{helperText}</p>}
     </div>
   );
 }
@@ -46,25 +47,26 @@ export function Textarea({ label, error, helperText, className = "", ...props }:
   return (
     <div className="space-y-1.5">
       {label && (
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-200">
           {label}
-          {props.required && <span className="text-red-500 ml-1">*</span>}
+          {props.required && <span className="text-red-400 ml-1">*</span>}
         </label>
       )}
       <textarea
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
-          focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
-          disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
+          placeholder-gray-400
+          focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500
+          disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed
           transition-all resize-none
-          ${error ? "border-red-300 focus:ring-red-500/20 focus:border-red-500" : "border-gray-200"}
+          ${error ? "border-red-400 focus:ring-red-500/30 focus:border-red-500" : "border-gray-300"}
           ${className}
         `}
         rows={4}
         {...props}
       />
-      {error && <p className="text-xs text-red-500">{error}</p>}
-      {helperText && !error && <p className="text-xs text-gray-500">{helperText}</p>}
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      {helperText && !error && <p className="text-xs text-gray-400">{helperText}</p>}
     </div>
   );
 }
@@ -87,24 +89,24 @@ export function Select({ label, error, helperText, options, placeholder, classNa
   return (
     <div className="space-y-1.5">
       {label && (
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-200">
           {label}
-          {props.required && <span className="text-red-500 ml-1">*</span>}
+          {props.required && <span className="text-red-400 ml-1">*</span>}
         </label>
       )}
       <select
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
-          focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
-          disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
+          focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500
+          disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed
           transition-all appearance-none cursor-pointer
-          ${error ? "border-red-300 focus:ring-red-500/20 focus:border-red-500" : "border-gray-200"}
+          ${error ? "border-red-400 focus:ring-red-500/30 focus:border-red-500" : "border-gray-300"}
           ${className}
         `}
         {...props}
       >
         {placeholder && (
-          <option value="">
+          <option value="" className="text-gray-400">
             {placeholder}
           </option>
         )}
@@ -114,8 +116,8 @@ export function Select({ label, error, helperText, options, placeholder, classNa
           </option>
         ))}
       </select>
-      {error && <p className="text-xs text-red-500">{error}</p>}
-      {helperText && !error && <p className="text-xs text-gray-500">{helperText}</p>}
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      {helperText && !error && <p className="text-xs text-gray-400">{helperText}</p>}
     </div>
   );
 }
@@ -132,17 +134,17 @@ export function Checkbox({ label, description, className = "", ...props }: Check
       <input
         type="checkbox"
         className={`
-          w-5 h-5 rounded border-gray-300 text-orange-600
-          focus:ring-orange-500/20 focus:ring-offset-0
+          w-5 h-5 rounded border-gray-300 text-orange-600 bg-white
+          focus:ring-orange-500/30 focus:ring-offset-0
           transition-colors cursor-pointer mt-0.5
           ${className}
         `}
         {...props}
       />
       <div>
-        <span className="text-sm font-medium text-gray-700">{label}</span>
+        <span className="text-sm font-medium text-gray-200">{label}</span>
         {description && (
-          <p className="text-xs text-gray-500 mt-0.5">{description}</p>
+          <p className="text-xs text-gray-400 mt-0.5">{description}</p>
         )}
       </div>
     </label>
@@ -162,9 +164,9 @@ export function Toggle({ label, description, checked, onChange, disabled }: Togg
   return (
     <label className="flex items-center justify-between cursor-pointer">
       <div>
-        <span className="text-sm font-medium text-gray-700">{label}</span>
+        <span className="text-sm font-medium text-gray-200">{label}</span>
         {description && (
-          <p className="text-xs text-gray-500 mt-0.5">{description}</p>
+          <p className="text-xs text-gray-400 mt-0.5">{description}</p>
         )}
       </div>
       <button
@@ -175,9 +177,9 @@ export function Toggle({ label, description, checked, onChange, disabled }: Togg
         onClick={() => onChange(!checked)}
         className={`
           relative inline-flex h-6 w-11 items-center rounded-full transition-colors
-          focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:ring-offset-2
+          focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:ring-offset-2 focus:ring-offset-slate-800
           disabled:opacity-50 disabled:cursor-not-allowed
-          ${checked ? "bg-orange-500" : "bg-gray-200"}
+          ${checked ? "bg-orange-500" : "bg-slate-600"}
         `}
       >
         <span
@@ -210,18 +212,18 @@ export function FileUpload({ label, accept, onChange, helperText, error, preview
   return (
     <div className="space-y-1.5">
       {label && (
-        <label className="block text-sm font-medium text-gray-700">{label}</label>
+        <label className="block text-sm font-medium text-gray-200">{label}</label>
       )}
       <div className="flex items-center gap-4">
         {preview && (
-          <div className="w-20 h-20 rounded-xl bg-gray-100 overflow-hidden">
+          <div className="w-20 h-20 rounded-xl bg-slate-700 overflow-hidden">
             <img src={preview} alt="Preview" className="w-full h-full object-cover" />
           </div>
         )}
-        <label className="flex-1 flex flex-col items-center justify-center px-6 py-8 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-orange-300 hover:bg-orange-50/50 transition-all">
+        <label className="flex-1 flex flex-col items-center justify-center px-6 py-8 border-2 border-dashed border-slate-600 rounded-xl cursor-pointer hover:border-orange-500 hover:bg-slate-800/50 transition-all">
           <div className="text-center">
-            <p className="text-sm text-gray-600">
-              <span className="text-orange-600 font-medium">Klik untuk upload</span> atau drag & drop
+            <p className="text-sm text-gray-300">
+              <span className="text-orange-500 font-medium">Klik untuk upload</span> atau drag & drop
             </p>
             <p className="text-xs text-gray-500 mt-1">PNG, JPG, PDF (max 5MB)</p>
           </div>
@@ -233,8 +235,8 @@ export function FileUpload({ label, accept, onChange, helperText, error, preview
           />
         </label>
       </div>
-      {error && <p className="text-xs text-red-500">{error}</p>}
-      {helperText && !error && <p className="text-xs text-gray-500">{helperText}</p>}
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      {helperText && !error && <p className="text-xs text-gray-400">{helperText}</p>}
     </div>
   );
 }
@@ -264,11 +266,11 @@ export function AdminButton({
   icon,
 }: AdminButtonProps) {
   const variantClasses = {
-    primary: "bg-orange-500 hover:bg-orange-600 text-white shadow-sm",
-    secondary: "bg-gray-100 hover:bg-gray-200 text-gray-700",
-    outline: "border border-gray-200 hover:bg-gray-50 text-gray-700",
+    primary: "bg-orange-500 hover:bg-orange-600 text-white shadow-sm shadow-orange-500/25",
+    secondary: "bg-slate-700 hover:bg-slate-600 text-gray-200",
+    outline: "border border-slate-600 hover:bg-slate-800 text-gray-200",
     danger: "bg-red-500 hover:bg-red-600 text-white",
-    ghost: "hover:bg-gray-100 text-gray-700",
+    ghost: "hover:bg-slate-800 text-gray-200",
   };
 
   const sizeClasses = {
@@ -331,11 +333,11 @@ interface FormSectionProps {
 
 export function FormSection({ title, description, children }: FormSectionProps) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+    <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-sm p-6">
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <h3 className="text-lg font-semibold text-gray-100">{title}</h3>
         {description && (
-          <p className="text-sm text-gray-500 mt-1">{description}</p>
+          <p className="text-sm text-gray-400 mt-1">{description}</p>
         )}
       </div>
       <div className="space-y-5">{children}</div>

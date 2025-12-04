@@ -45,7 +45,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50/50 flex">
+    <div className="min-h-screen bg-slate-900 flex">
       <AdminSidebar
         isOpen={sidebarOpen}
         onCloseAction={() => setSidebarOpen(false)}
@@ -56,7 +56,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
         <AdminTopbar onMenuClickAction={() => setSidebarOpen(true)} />
 
         {/* Page content */}
-        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-auto relative z-0">
+        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-auto relative z-0 bg-slate-900">
           {children}
         </main>
       </div>

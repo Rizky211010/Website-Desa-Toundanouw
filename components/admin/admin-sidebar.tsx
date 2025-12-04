@@ -241,8 +241,8 @@ function NavItemComponent({
             ${depth > 0 ? "pl-10" : ""}
             ${
               isActive || isChildActive
-                ? "bg-gradient-to-r from-orange-50 to-amber-50 text-orange-700 shadow-sm"
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-gradient-to-r from-orange-900/30 to-amber-900/20 text-orange-400 shadow-sm"
+                : "text-gray-400 hover:bg-slate-700/50 hover:text-gray-200"
             }
           `}
         >
@@ -250,18 +250,18 @@ function NavItemComponent({
           {(isActive || isChildActive) && (
             <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-orange-400 to-amber-500 rounded-r-full" />
           )}
-          <span className={`transition-colors duration-300 ${isActive || isChildActive ? "text-orange-500" : "text-gray-400 group-hover:text-gray-600"}`}>
+          <span className={`transition-colors duration-300 ${isActive || isChildActive ? "text-orange-500" : "text-gray-500 group-hover:text-gray-400"}`}>
             {item.icon}
           </span>
           <span className="flex-1 text-left">{item.label}</span>
           <ChevronDown
-            className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${
+            className={`h-4 w-4 text-gray-500 transition-transform duration-300 ${
               isExpanded ? "rotate-180" : ""
             }`}
           />
         </button>
         <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="ml-5 space-y-1 border-l-2 border-gray-100 pl-3 py-1">
+          <div className="ml-5 space-y-1 border-l-2 border-slate-700 pl-3 py-1">
             {accessibleSubmenu.map((subItem) => (
               <NavItemComponent
                 key={subItem.href}
@@ -288,8 +288,8 @@ function NavItemComponent({
         ${depth > 0 ? "pl-7" : ""}
         ${
           isActive
-            ? "bg-gradient-to-r from-orange-50 to-amber-50 text-orange-700 shadow-sm"
-            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+            ? "bg-gradient-to-r from-orange-900/30 to-amber-900/20 text-orange-400 shadow-sm"
+            : "text-gray-400 hover:bg-slate-700/50 hover:text-gray-200"
         }
       `}
     >
@@ -297,7 +297,7 @@ function NavItemComponent({
       {isActive && (
         <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-orange-400 to-amber-500 rounded-r-full" />
       )}
-      <span className={`transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-400 group-hover:text-gray-600"}`}>
+      <span className={`transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-500 group-hover:text-gray-400"}`}>
         {item.icon}
       </span>
       <span className="flex-1">{item.label}</span>
@@ -396,7 +396,7 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
         {/* Sidebar Skeleton */}
         <aside
           className={`
-            fixed top-0 left-0 z-50 h-full w-72 bg-white border-r border-gray-200 
+            fixed top-0 left-0 z-50 h-full w-72 bg-slate-800 border-r border-slate-700 
             transform transition-transform duration-300 ease-out
             lg:translate-x-0 lg:static lg:z-0
             ${isOpen ? "translate-x-0" : "-translate-x-full"}
@@ -404,12 +404,12 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
           `}
         >
           {/* Header */}
-          <div className="flex items-center justify-between h-16 px-4 border-b border-gray-100">
+          <div className="flex items-center justify-between h-16 px-4 border-b border-slate-700">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gray-200 rounded-xl animate-pulse" />
+              <div className="w-10 h-10 bg-slate-700 rounded-xl animate-pulse" />
               <div className="hidden sm:block space-y-2">
-                <div className="h-4 w-20 bg-gray-200 rounded animate-pulse" />
-                <div className="h-3 w-16 bg-gray-200 rounded animate-pulse" />
+                <div className="h-4 w-20 bg-slate-700 rounded animate-pulse" />
+                <div className="h-3 w-16 bg-slate-700 rounded animate-pulse" />
               </div>
             </div>
           </div>
@@ -418,8 +418,8 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
           <nav className="flex-1 overflow-y-auto p-4 space-y-2">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="flex items-center gap-3 px-3 py-2.5">
-                <div className="w-5 h-5 bg-gray-200 rounded animate-pulse" />
-                <div className="h-4 flex-1 bg-gray-200 rounded animate-pulse" />
+                <div className="w-5 h-5 bg-slate-700 rounded animate-pulse" />
+                <div className="h-4 flex-1 bg-slate-700 rounded animate-pulse" />
               </div>
             ))}
           </nav>
@@ -442,15 +442,15 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
       <aside
         className={`
           fixed top-0 left-0 z-50 h-full w-72 
-          bg-white/95 backdrop-blur-xl border-r border-gray-200/80
+          bg-slate-800/95 backdrop-blur-xl border-r border-slate-700/80
           transform transition-all duration-300 ease-out
           lg:translate-x-0 lg:static lg:z-10
-          ${isOpen ? "translate-x-0 shadow-2xl shadow-gray-900/20" : "-translate-x-full"}
+          ${isOpen ? "translate-x-0 shadow-2xl shadow-black/40" : "-translate-x-full"}
           flex flex-col
         `}
       >
         {/* Header - Premium Design */}
-        <div className="flex items-center justify-between h-[72px] px-5 border-b border-gray-100 bg-gradient-to-r from-white to-gray-50/50">
+        <div className="flex items-center justify-between h-[72px] px-5 border-b border-slate-700 bg-gradient-to-r from-slate-800 to-slate-800/50">
           <Link href="/admin/dashboard" className="flex items-center gap-4 group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-amber-500 rounded-xl blur-md opacity-30 group-hover:opacity-50 transition-opacity" />
@@ -465,20 +465,20 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
               </div>
             </div>
             <div className="hidden sm:block">
-              <p className="font-bold text-gray-900 text-sm leading-tight tracking-tight">Admin Panel</p>
-              <p className="text-xs text-gray-500 font-medium">Desa Toundanouw</p>
+              <p className="font-bold text-gray-100 text-sm leading-tight tracking-tight">Admin Panel</p>
+              <p className="text-xs text-gray-400 font-medium">Desa Toundanouw</p>
             </div>
           </Link>
           <button
             onClick={onCloseAction}
-            className="lg:hidden p-2.5 rounded-xl hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2.5 rounded-xl hover:bg-slate-700 transition-colors"
           >
             <IconClose variant="muted" iconSize="md" />
           </button>
         </div>
 
         {/* Navigation - Premium Scroll */}
-        <nav className="flex-1 overflow-y-auto p-4 space-y-1.5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-300">
+        <nav className="flex-1 overflow-y-auto p-4 space-y-1.5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-600 hover:scrollbar-thumb-slate-500">
           {navItems.map((item) => (
             <NavItemComponent 
               key={item.href} 
@@ -499,15 +499,15 @@ export function AdminSidebar({ isOpen, onCloseAction }: AdminSidebarProps) {
         </div>
 
         {/* Footer - Premium Help Card */}
-        <div className="p-4 border-t border-gray-100">
-          <div className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 rounded-2xl p-5 overflow-hidden border border-orange-100/50">
+        <div className="p-4 border-t border-slate-700">
+          <div className="relative bg-gradient-to-br from-slate-700 via-slate-700 to-slate-600 rounded-2xl p-5 overflow-hidden border border-slate-600/50">
             {/* Decorative circles */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-200/30 rounded-full blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-amber-200/30 rounded-full blur-xl" />
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-amber-500/10 rounded-full blur-xl" />
             
             <div className="relative z-10">
-              <p className="text-sm font-bold text-orange-900">Butuh Bantuan?</p>
-              <p className="text-xs text-orange-700/80 mt-1.5 leading-relaxed">
+              <p className="text-sm font-bold text-gray-100">Butuh Bantuan?</p>
+              <p className="text-xs text-gray-400 mt-1.5 leading-relaxed">
                 Hubungi via Instagram untuk bantuan teknis.
               </p>
               <a 

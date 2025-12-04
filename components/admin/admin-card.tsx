@@ -29,19 +29,19 @@ export function AdminCard({
   return (
     <div
       className={`
-        bg-white rounded-2xl border border-gray-100 shadow-sm
-        ${hoverable ? "hover:shadow-md hover:border-gray-200 transition-all duration-200" : ""}
+        bg-slate-800 rounded-2xl border border-slate-700 shadow-sm
+        ${hoverable ? "hover:shadow-md hover:border-slate-600 transition-all duration-200" : ""}
         ${className}
       `}
     >
       {(title || action) && (
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
           <div>
             {title && (
-              <h3 className="font-semibold text-gray-900">{title}</h3>
+              <h3 className="font-semibold text-gray-100">{title}</h3>
             )}
             {subtitle && (
-              <p className="text-sm text-gray-500 mt-0.5">{subtitle}</p>
+              <p className="text-sm text-gray-400 mt-0.5">{subtitle}</p>
             )}
           </div>
           {action && <div>{action}</div>}
@@ -72,35 +72,35 @@ export function StatsCard({
   color = "orange",
 }: StatsCardProps) {
   const colorClasses = {
-    orange: "bg-orange-50 text-orange-600",
-    blue: "bg-blue-50 text-blue-600",
-    green: "bg-green-50 text-green-600",
-    purple: "bg-purple-50 text-purple-600",
-    red: "bg-red-50 text-red-600",
-    yellow: "bg-yellow-50 text-yellow-600",
-    gray: "bg-gray-50 text-gray-600",
+    orange: "bg-orange-900/30 text-orange-400",
+    blue: "bg-blue-900/30 text-blue-400",
+    green: "bg-green-900/30 text-green-400",
+    purple: "bg-purple-900/30 text-purple-400",
+    red: "bg-red-900/30 text-red-400",
+    yellow: "bg-yellow-900/30 text-yellow-400",
+    gray: "bg-slate-700 text-gray-400",
   };
 
   const iconBgClasses = {
-    orange: "bg-orange-100",
-    blue: "bg-blue-100",
-    green: "bg-green-100",
-    purple: "bg-purple-100",
-    red: "bg-red-100",
-    yellow: "bg-yellow-100",
-    gray: "bg-gray-100",
+    orange: "bg-orange-900/50",
+    blue: "bg-blue-900/50",
+    green: "bg-green-900/50",
+    purple: "bg-purple-900/50",
+    red: "bg-red-900/50",
+    yellow: "bg-yellow-900/50",
+    gray: "bg-slate-700",
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:shadow-md transition-shadow">
+    <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-sm p-5 hover:shadow-md transition-shadow">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="text-sm font-medium text-gray-500">{title}</p>
-          <p className="text-2xl font-bold text-gray-900 mt-2">{value}</p>
+          <p className="text-sm font-medium text-gray-400">{title}</p>
+          <p className="text-2xl font-bold text-gray-100 mt-2">{value}</p>
           {trend && (
             <p
               className={`text-xs font-medium mt-2 ${
-                trend.positive ? "text-green-600" : "text-red-600"
+                trend.positive ? "text-green-400" : "text-red-400"
               }`}
             >
               {trend.positive ? "↑" : "↓"} {trend.value}
