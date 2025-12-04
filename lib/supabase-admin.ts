@@ -7,11 +7,16 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import bcrypt from 'bcryptjs';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+// Check if environment variables are configured
+const hasValidConfig = !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
 
-if (!supabaseUrl || !supabaseServiceRoleKey) {
-  throw new Error(
+// Use placeholder values during build time when env vars are not available
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'MISSING-SERVICE-ROLE-KEY-SET-ENV-VAR';
+
+// Warn when environment variables are missing during development
+if (!hasValidConfig && process.env.NODE_ENV === 'development') {
+  console.warn(
     'Missing Supabase environment variables. Check .env.local for NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY'
   );
 }
