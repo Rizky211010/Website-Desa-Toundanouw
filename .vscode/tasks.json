@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install Supabase Package",
+			"type": "shell",
+			"command": "npm install @supabase/supabase-js"
+		}
+	]
+}
