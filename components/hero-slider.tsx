@@ -158,7 +158,7 @@ export function HeroSlider() {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden min-h-[90vh] flex items-center"
+      className="relative overflow-hidden min-h-[100svh] sm:min-h-[90vh] flex items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -222,20 +222,20 @@ export function HeroSlider() {
       )}
 
       {/* Content */}
-      <Container className="relative py-20 sm:py-28 lg:py-36 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <Container className="relative py-16 sm:py-24 lg:py-32 z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-5 sm:space-y-8 text-center lg:text-left">
             {/* Badge */}
             <div 
-              className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/15 backdrop-blur-md rounded-full border border-white/20 shadow-lg animate-fade-in-down"
+              className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/15 backdrop-blur-md rounded-full border border-white/20 shadow-lg animate-fade-in-down"
               style={{ animationDelay: '100ms' }}
             >
-              <span className="relative flex h-2.5 w-2.5">
+              <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400" />
+                <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-yellow-400" />
               </span>
-              <span className="text-sm font-semibold tracking-wide text-white/95">
+              <span className="text-xs sm:text-sm font-semibold tracking-wide text-white/95">
                 Portal Resmi Pemerintah Desa
               </span>
             </div>
@@ -243,11 +243,11 @@ export function HeroSlider() {
             {/* Headline with Gradient */}
             <h1
               key={currentSlide?.id}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white animate-fade-in-up"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white animate-fade-in-up"
               style={{ animationDelay: '200ms' }}
             >
               <span className="block">{currentSlide?.headline?.split(' ').slice(0, 2).join(' ') || "Selamat Datang"}</span>
-              <span className="block mt-2 bg-gradient-to-r from-yellow-200 via-yellow-300 to-orange-200 bg-clip-text text-transparent">
+              <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-yellow-200 via-yellow-300 to-orange-200 bg-clip-text text-transparent">
                 {currentSlide?.headline?.split(' ').slice(2).join(' ') || ""}
               </span>
             </h1>
@@ -255,7 +255,7 @@ export function HeroSlider() {
             {/* Subheadline */}
             {currentSlide?.subheadline && (
               <p 
-                className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-xl animate-fade-in-up"
+                className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in-up"
                 style={{ animationDelay: '300ms' }}
               >
                 {currentSlide.subheadline}
@@ -264,16 +264,16 @@ export function HeroSlider() {
 
             {/* Buttons */}
             <div 
-              className="flex flex-wrap gap-4 pt-2 animate-fade-in-up"
+              className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-2 animate-fade-in-up"
               style={{ animationDelay: '400ms' }}
             >
               {currentSlide?.primary_button_text && currentSlide?.primary_button_url && (
                 <Button 
                   href={currentSlide.primary_button_url} 
                   size="lg" 
-                  className="group bg-white text-orange-600 hover:bg-orange-50 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 px-8 py-4 text-base font-semibold rounded-xl"
+                  className="group bg-white text-orange-600 hover:bg-orange-50 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl w-full sm:w-auto"
                 >
-                  <Building className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  <Building className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
                   {currentSlide.primary_button_text}
                 </Button>
               )}
@@ -282,9 +282,9 @@ export function HeroSlider() {
                   href={currentSlide.secondary_button_url}
                   size="lg"
                   variant="outline"
-                  className="group border-2 border-white/50 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 px-8 py-4 text-base font-semibold rounded-xl"
+                  className="group border-2 border-white/50 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl w-full sm:w-auto"
                 >
-                  <FileText className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  <FileText className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
                   {currentSlide.secondary_button_text}
                 </Button>
               )}
@@ -292,11 +292,11 @@ export function HeroSlider() {
 
             {/* Service Hours */}
             <div 
-              className="flex items-center gap-3 text-sm text-white/70 pt-4 animate-fade-in-up"
+              className="flex items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-white/70 pt-2 sm:pt-4 animate-fade-in-up"
               style={{ animationDelay: '500ms' }}
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm">
-                <Clock className="w-5 h-5 text-yellow-300" />
+              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-sm">
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
               </div>
               <div>
                 <p className="font-medium text-white/90">Jam Layanan Kantor Desa</p>
@@ -356,8 +356,8 @@ export function HeroSlider() {
         </div>
 
         {/* Mobile Stats */}
-        <div className="lg:hidden mt-12 grid grid-cols-2 gap-3">
-          {statsConfig.slice(0, 2).map((stat) => {
+        <div className="lg:hidden mt-8 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+          {statsConfig.map((stat) => {
             const Icon = stat.icon;
             const value = stat.key === 'online' 
               ? stat.value 
@@ -366,13 +366,13 @@ export function HeroSlider() {
             return (
               <div 
                 key={stat.key}
-                className="bg-white/10 backdrop-blur-md rounded-xl p-4 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 text-center border border-white/20"
               >
-                <div className="flex justify-center mb-2">
-                  <Icon className="w-5 h-5 text-yellow-300" />
+                <div className="flex justify-center mb-1 sm:mb-2">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">{value}</div>
-                <div className="text-xs text-white/70">{stat.label}</div>
+                <div className="text-lg sm:text-2xl font-bold text-white">{value}</div>
+                <div className="text-[10px] sm:text-xs text-white/70 leading-tight">{stat.label}</div>
               </div>
             );
           })}

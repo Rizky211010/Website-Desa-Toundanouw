@@ -219,9 +219,9 @@ export default async function HomePage() {
       <HeroSlider />
 
       {/* Highlight 4 Menu Utama (Grid 2x2) - Premium Design */}
-      <section className="relative z-10 -mt-16 pb-16">
+      <section className="relative z-10 -mt-12 sm:-mt-16 pb-12 sm:pb-16">
         <Container>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {[
               {
                 icon: Building,
@@ -263,7 +263,7 @@ export default async function HomePage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group relative bg-white dark:bg-slate-800 rounded-2xl p-5 sm:p-7 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100/80 dark:border-slate-700 overflow-hidden"
+                className="group relative bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-7 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100/80 dark:border-slate-700 overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Gradient overlay on hover */}
@@ -274,19 +274,19 @@ export default async function HomePage() {
                 
                 <div className="relative z-10">
                   <div
-                    className={`w-14 h-14 sm:w-16 sm:h-16 mb-4 sm:mb-5 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${item.iconBg} dark:bg-opacity-20`}
+                    className={`w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 sm:mb-4 md:mb-5 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${item.iconBg} dark:bg-opacity-20`}
                   >
                     <item.icon
-                      className={`w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br ${item.gradient} bg-clip-text`}
+                      className={`w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-gradient-to-br ${item.gradient} bg-clip-text`}
                       style={{ color: item.gradient.includes('orange') ? '#f97316' : item.gradient.includes('emerald') ? '#10b981' : item.gradient.includes('blue') ? '#3b82f6' : '#8b5cf6' }}
                     />
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-1.5 text-base sm:text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-0.5 sm:mb-1.5 text-sm sm:text-base md:text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
                     {item.desc}
-                    <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                    <ChevronRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 hidden sm:block" />
                   </p>
                 </div>
               </Link>
@@ -296,26 +296,26 @@ export default async function HomePage() {
       </section>
 
       {/* Profil Singkat Desa - Premium Design */}
-      <section className="bg-gradient-to-b from-white via-white to-cream dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-20 sm:py-28 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-white via-white to-cream dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 py-16 sm:py-20 md:py-28 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/50 dark:bg-orange-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cream dark:bg-orange-900/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         
         <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full mb-5">
-              <Sparkles className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-              <span className="text-sm font-semibold text-orange-700 dark:text-orange-400 tracking-wide">
+          <div className="text-center mb-10 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full mb-4 sm:mb-5">
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-600 dark:text-orange-400" />
+              <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-400 tracking-wide">
                 Tentang Kami
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-5 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-5 tracking-tight">
               Profil Desa{' '}
               <span className="text-gradient-primary">
                 {profil?.nama_desa || 'Toundanouw'}
               </span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
               Mengenal lebih dekat desa kami yang asri dan penuh kekeluargaan di wilayah Minahasa Tenggara
             </p>
           </div>
@@ -350,30 +350,30 @@ export default async function HomePage() {
             ].map((card, index) => (
               <div
                 key={card.title}
-                className="group relative bg-white dark:bg-slate-800/80 rounded-3xl p-8 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 overflow-hidden"
+                className="group relative bg-white dark:bg-slate-800/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-slate-700 overflow-hidden"
               >
                 {/* Top gradient border */}
-                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${card.gradient} rounded-t-3xl`} />
+                <div className={`absolute top-0 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r ${card.gradient} rounded-t-2xl sm:rounded-t-3xl`} />
                 
                 {/* Icon */}
-                <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${card.iconBg} dark:from-opacity-30 dark:to-opacity-30 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-gray-200/30`}>
-                  <card.icon className={`w-10 h-10 text-transparent bg-gradient-to-br ${card.gradient} bg-clip-text`} style={{ color: card.gradient.includes('orange') ? '#f97316' : card.gradient.includes('yellow') ? '#eab308' : '#22c55e' }} />
+                <div className={`w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br ${card.iconBg} dark:from-opacity-30 dark:to-opacity-30 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-gray-200/30`}>
+                  <card.icon className={`w-7 h-7 sm:w-10 sm:h-10 text-transparent bg-gradient-to-br ${card.gradient} bg-clip-text`} style={{ color: card.gradient.includes('orange') ? '#f97316' : card.gradient.includes('yellow') ? '#eab308' : '#22c55e' }} />
                 </div>
                 
-                <h3 className="font-bold text-gray-900 dark:text-white mb-4 text-xl text-center">
+                <h3 className="font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 text-lg sm:text-xl text-center">
                   {card.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 text-center leading-relaxed">
                   {card.desc}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-14">
-            <Button href="/profil" variant="outline" size="lg" className="group px-8 py-4 text-base hover:bg-orange-50 hover:border-orange-300 dark:hover:bg-orange-900/20">
+          <div className="text-center mt-10 sm:mt-14">
+            <Button href="/profil" variant="outline" size="lg" className="group px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base hover:bg-orange-50 hover:border-orange-300 dark:hover:bg-orange-900/20">
               Selengkapnya Tentang Desa
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </Container>
@@ -381,16 +381,16 @@ export default async function HomePage() {
 
       {/* Sejarah Desa - Premium Design */}
       {profil?.sejarah && (
-        <section className="bg-white dark:bg-slate-900 py-20 sm:py-28 relative overflow-hidden">
+        <section className="bg-white dark:bg-slate-900 py-16 sm:py-20 md:py-28 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-orange-50/50 dark:bg-orange-900/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-amber-50/50 dark:bg-amber-900/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
           
           <Container className="relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               {/* Left - Image/Illustration */}
               <div className="relative order-2 lg:order-1">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 dark:shadow-none border border-orange-100 dark:border-slate-700">
+                <div className="relative aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 dark:shadow-none border border-orange-100 dark:border-slate-700">
                   {/* Gambar Sejarah Desa */}
                   <Image
                     src="/sejarah-desa.png"
@@ -422,14 +422,14 @@ export default async function HomePage() {
 
               {/* Right - Content */}
               <div className="order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full mb-6">
-                  <History className="w-4 h-4 text-orange-600 dark:text-orange-400" />
-                  <span className="text-sm font-semibold text-orange-700 dark:text-orange-400 tracking-wide">
+                <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full mb-4 sm:mb-6">
+                  <History className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-600 dark:text-orange-400" />
+                  <span className="text-xs sm:text-sm font-semibold text-orange-700 dark:text-orange-400 tracking-wide">
                     Sejarah Desa
                   </span>
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 tracking-tight">
                   Mengenal Sejarah{' '}
                   <span className="text-gradient-primary">
                     {profil?.nama_desa || 'Toundanouw'}
@@ -445,11 +445,11 @@ export default async function HomePage() {
                   </p>
                 </div>
                 
-                <div className="mt-8">
-                  <Button href="/jelajahi/sejarah" size="lg" className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 px-6 sm:px-8 py-3 sm:py-4">
-                    <History className="w-5 h-5" />
+                <div className="mt-6 sm:mt-8">
+                  <Button href="/jelajahi/sejarah" size="lg" className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 px-5 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base">
+                    <History className="w-4 h-4 sm:w-5 sm:h-5" />
                     Lihat Sejarah Lengkap
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </div>
@@ -459,20 +459,20 @@ export default async function HomePage() {
       )}
 
       {/* Berita Terbaru - Premium Design */}
-      <section className="bg-cream dark:bg-slate-800/50 py-20 sm:py-28 relative overflow-hidden">
+      <section className="bg-cream dark:bg-slate-800/50 py-16 sm:py-20 md:py-28 relative overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 hero-pattern opacity-30" />
         
         <Container className="relative z-10">
-          <div className="flex items-end justify-between mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 sm:mb-14 gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full mb-5">
-                <Newspaper className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span className="text-sm font-semibold text-blue-700 dark:text-blue-400 tracking-wide">
+              <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full mb-3 sm:mb-5">
+                <Newspaper className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-400 tracking-wide">
                   Informasi Terkini
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
                 Berita Terbaru
               </h2>
             </div>
@@ -483,14 +483,14 @@ export default async function HomePage() {
           </div>
 
           {latestNews.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {latestNews.map((news, index) => (
                 <article
                   key={news.id}
-                  className="group relative bg-white dark:bg-slate-800 rounded-3xl shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100/50 dark:border-slate-700"
+                  className="group relative bg-white dark:bg-slate-800 rounded-2xl sm:rounded-3xl shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-gray-100/50 dark:border-slate-700"
                 >
                   {/* Image Container */}
-                  <div className="relative h-52 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 md:h-52 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden">
                     {news.thumbnail_url ? (
                       <Image
                         src={news.thumbnail_url}
@@ -528,17 +528,17 @@ export default async function HomePage() {
                   </div>
                   
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 text-lg leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                  <div className="p-4 sm:p-5 md:p-6">
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 line-clamp-2 text-base sm:text-lg leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
                       {news.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 line-clamp-2 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 sm:mb-5 line-clamp-2 leading-relaxed">
                       {news.excerpt || 'Klik untuk membaca selengkapnya...'}
                     </p>
                     
-                    <div className="flex items-center justify-between pt-5 border-t border-gray-100 dark:border-slate-700">
-                      <span className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5" />
+                    <div className="flex items-center justify-between pt-3 sm:pt-5 border-t border-gray-100 dark:border-slate-700">
+                      <span className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1 sm:gap-1.5">
+                        <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         {formatDate(news.published_at)}
                       </span>
                       <Link
@@ -570,21 +570,21 @@ export default async function HomePage() {
       </section>
 
       {/* Layanan E-Surat - Premium Design */}
-      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28 relative overflow-hidden">
+      <section className="bg-white dark:bg-slate-900 py-16 sm:py-20 md:py-28 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-purple-100/50 dark:bg-purple-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         
         <Container className="relative z-10">
-          <div className="mb-14">
-            <div className="flex items-end justify-between mb-6">
+          <div className="mb-8 sm:mb-14">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-4 sm:mb-6 gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30 rounded-full mb-5">
-                  <FileText className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                  <span className="text-sm font-semibold text-purple-700 dark:text-purple-400 tracking-wide">
+                <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-gradient-to-r from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30 rounded-full mb-3 sm:mb-5">
+                  <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-600 dark:text-purple-400" />
+                  <span className="text-xs sm:text-sm font-semibold text-purple-700 dark:text-purple-400 tracking-wide">
                     Layanan Digital
                   </span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight">
                   Layanan E-Surat Mandiri
                 </h2>
               </div>
@@ -595,18 +595,18 @@ export default async function HomePage() {
             </div>
 
             {/* Penjelasan Layanan - Premium Card */}
-            <div className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-orange-900/20 dark:via-amber-900/20 dark:to-yellow-900/20 rounded-3xl p-8 sm:p-10 mb-14 border border-orange-100/50 dark:border-orange-800/30 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-orange-900/20 dark:via-amber-900/20 dark:to-yellow-900/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 mb-8 sm:mb-14 border border-orange-100/50 dark:border-orange-800/30 overflow-hidden">
               {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-200/50 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-yellow-200/50 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-orange-200/50 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-36 sm:w-48 h-36 sm:h-48 bg-yellow-200/50 rounded-full blur-3xl" />
               
               <div className="relative z-10">
-                <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg leading-relaxed max-w-3xl">
+                <p className="text-gray-700 dark:text-gray-300 mb-5 sm:mb-8 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl">
                   Warga dapat <strong className="text-orange-600 dark:text-orange-400 font-semibold">download template surat</strong> dalam format
                   Word (.docx), cetak sendiri, dan isi data yang diperlukan. Bawa ke
                   kantor desa jika memerlukan legalisasi atau tanda tangan pejabat desa.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                   {[
                     { icon: Download, text: "Download Template", color: "orange" },
                     { icon: Printer, text: "Cetak & Isi Data", color: "amber" },
@@ -614,20 +614,20 @@ export default async function HomePage() {
                   ].map((step, index) => (
                     <div 
                       key={step.text}
-                      className="flex items-center gap-3 bg-white dark:bg-slate-800 px-5 py-3 rounded-xl shadow-md shadow-orange-100/50 dark:shadow-none border border-orange-100/50 dark:border-slate-700"
+                      className="flex items-center gap-2 sm:gap-3 bg-white dark:bg-slate-800 px-3 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl shadow-md shadow-orange-100/50 dark:shadow-none border border-orange-100/50 dark:border-slate-700"
                     >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
                         step.color === 'orange' ? 'bg-orange-100 dark:bg-orange-900/30' :
                         step.color === 'amber' ? 'bg-amber-100 dark:bg-amber-900/30' :
                         'bg-green-100 dark:bg-green-900/30'
                       }`}>
-                        <step.icon className={`w-5 h-5 ${
+                        <step.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${
                           step.color === 'orange' ? 'text-orange-600 dark:text-orange-400' :
                           step.color === 'amber' ? 'text-amber-600 dark:text-amber-400' :
                           'text-green-600 dark:text-green-400'
                         }`} />
                       </div>
-                      <span className="font-semibold text-gray-700 dark:text-gray-300">{step.text}</span>
+                      <span className="font-medium sm:font-semibold text-sm sm:text-base text-gray-700 dark:text-gray-300">{step.text}</span>
                     </div>
                   ))}
                 </div>
@@ -636,35 +636,35 @@ export default async function HomePage() {
           </div>
 
           {popularSurat.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
               {popularSurat.map((surat, index) => (
                 <div
                   key={surat.id}
-                  className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100/50 dark:border-slate-700 overflow-hidden"
+                  className="group relative bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-500 hover:-translate-y-2 border border-gray-100/50 dark:border-slate-700 overflow-hidden"
                 >
                   {/* Hover gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/10 dark:to-violet-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-md">
-                        <FileText className="w-7 h-7 text-purple-600 dark:text-purple-400" />
+                    <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-100 to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-md">
+                        <FileText className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-400" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h3 className="font-bold text-gray-900 dark:text-white text-base leading-tight mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                        <h3 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base leading-tight mb-1 sm:mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
                           {surat.name}
                         </h3>
-                        <Badge variant="default" className="text-xs">
+                        <Badge variant="default" className="text-[10px] sm:text-xs">
                           {surat.category}
                         </Badge>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed line-clamp-2">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 sm:mb-5 leading-relaxed line-clamp-2">
                       {surat.description}
                     </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-slate-700">
-                      <span className="text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1.5">
-                        <Download className="w-3.5 h-3.5" />
+                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 dark:border-slate-700">
+                      <span className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 flex items-center gap-1 sm:gap-1.5">
+                        <Download className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         {surat.download_count} unduhan
                       </span>
                       <Link
@@ -696,36 +696,36 @@ export default async function HomePage() {
       </section>
 
       {/* Galeri Section - Premium Design */}
-      <section className="bg-cream dark:bg-slate-800/50 py-20 sm:py-28 relative overflow-hidden">
+      <section className="bg-cream dark:bg-slate-800/50 py-16 sm:py-20 md:py-28 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 hero-pattern opacity-20" />
         
         <Container className="relative z-10">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-full mb-5">
-              <Camera className="w-4 h-4 text-green-600 dark:text-green-400" />
-              <span className="text-sm font-semibold text-green-700 dark:text-green-400 tracking-wide">
+          <div className="text-center mb-8 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-full mb-3 sm:mb-5">
+              <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-600 dark:text-green-400" />
+              <span className="text-xs sm:text-sm font-semibold text-green-700 dark:text-green-400 tracking-wide">
                 Dokumentasi
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-5 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-5 tracking-tight">
               Galeri Desa
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
               Kumpulan foto kegiatan dan keindahan Desa {profil?.nama_desa || 'Toundanouw'}
             </p>
           </div>
 
           {galeriItems.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 md:gap-5">
               {galeriItems.map((item, i) => (
                 <div
                   key={item.id}
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl transition-all duration-500 ${
-                    i === 0 || i === 3 ? "md:row-span-2" : ""
+                  className={`group relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-gray-200/50 dark:shadow-none hover:shadow-xl transition-all duration-500 ${
+                    i === 0 || i === 3 ? "sm:row-span-2" : ""
                   }`}
                 >
-                  <div className={`${i === 0 || i === 3 ? 'aspect-[3/4]' : 'aspect-square'} bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 flex items-center justify-center overflow-hidden relative`}>
+                  <div className={`${i === 0 || i === 3 ? 'aspect-square sm:aspect-[3/4]' : 'aspect-square'} bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 flex items-center justify-center overflow-hidden relative`}>
                     {item.foto_url ? (
                       <Image
                         src={item.foto_url}
@@ -739,12 +739,12 @@ export default async function HomePage() {
                   </div>
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-5">
-                    <span className="text-white font-semibold text-sm sm:text-base transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-3 sm:p-5">
+                    <span className="text-white font-semibold text-xs sm:text-sm md:text-base transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       {item.judul}
                     </span>
                     {item.kategori && (
-                      <span className="text-white/70 text-xs mt-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                      <span className="text-white/70 text-[10px] sm:text-xs mt-0.5 sm:mt-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                         {item.kategori}
                       </span>
                     )}
@@ -752,7 +752,7 @@ export default async function HomePage() {
                   
                   {/* Featured badge */}
                   {item.is_featured && (
-                    <div className="absolute top-3 right-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full font-semibold shadow-lg">
                       Featured
                     </div>
                   )}
@@ -779,20 +779,20 @@ export default async function HomePage() {
             </div>
           )}
 
-          <div className="text-center mt-14">
-            <Button href="/galeri" variant="outline" size="lg" className="group px-8 py-4 text-base hover:bg-green-50 hover:border-green-300 dark:hover:bg-green-900/20">
-              <Camera className="w-5 h-5" />
+          <div className="text-center mt-10 sm:mt-14">
+            <Button href="/galeri" variant="outline" size="lg" className="group px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base hover:bg-green-50 hover:border-green-300 dark:hover:bg-green-900/20">
+              <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
               Lihat Galeri Lengkap
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </Container>
       </section>
 
       {/* Informasi Kontak - Premium Design */}
-      <section className="bg-white dark:bg-slate-900 py-16 sm:py-20 border-t border-gray-100 dark:border-slate-800">
+      <section className="bg-white dark:bg-slate-900 py-12 sm:py-16 md:py-20 border-t border-gray-100 dark:border-slate-800">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {[
               {
                 icon: MapPin,
@@ -818,20 +818,20 @@ export default async function HomePage() {
             ].map((contact) => (
               <div 
                 key={contact.label}
-                className="group flex items-center gap-5 bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-100 dark:border-slate-700 shadow-lg shadow-gray-100/50 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                className="group flex items-center gap-3 sm:gap-5 bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-gray-100 dark:border-slate-700 shadow-lg shadow-gray-100/50 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
               >
-                <div className={`w-14 h-14 bg-gradient-to-br ${contact.bgGradient} dark:from-opacity-30 dark:to-opacity-30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                  <contact.icon className={`w-7 h-7 ${
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br ${contact.bgGradient} dark:from-opacity-30 dark:to-opacity-30 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  <contact.icon className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 ${
                     contact.color === 'orange' ? 'text-orange-600 dark:text-orange-400' :
                     contact.color === 'green' ? 'text-green-600 dark:text-green-400' :
                     'text-blue-600 dark:text-blue-400'
                   }`} />
                 </div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold mb-1">
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold mb-0.5 sm:mb-1">
                     {contact.label}
                   </p>
-                  <p className="font-bold text-gray-900 dark:text-white text-lg">
+                  <p className="font-bold text-gray-900 dark:text-white text-sm sm:text-base md:text-lg truncate">
                     {contact.value}
                   </p>
                 </div>
@@ -842,46 +842,46 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Section - Premium Design */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
+      <section className="relative overflow-hidden py-16 sm:py-24 md:py-32">
         {/* Premium gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600" />
         
         {/* Animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-300/20 rounded-full blur-3xl" style={{ animation: 'float 10s ease-in-out infinite reverse' }} />
-          <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-white/10 rounded-full blur-2xl" style={{ animation: 'float 8s ease-in-out infinite 2s' }} />
+          <div className="absolute top-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-yellow-400/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 left-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-orange-300/20 rounded-full blur-3xl" style={{ animation: 'float 10s ease-in-out infinite reverse' }} />
+          <div className="absolute top-1/2 left-1/2 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] bg-white/10 rounded-full blur-2xl" style={{ animation: 'float 8s ease-in-out infinite 2s' }} />
         </div>
         
         {/* Pattern overlay */}
         <div className="absolute inset-0 hero-pattern opacity-10" />
         
         <Container className="relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="text-center md:text-left">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 Ada Pertanyaan atau{' '}
                 <span className="text-yellow-300">Butuh Bantuan?</span>
               </h2>
-              <p className="text-lg text-orange-100 mb-10 leading-relaxed max-w-lg">
+              <p className="text-base sm:text-lg text-orange-100 mb-6 sm:mb-10 leading-relaxed max-w-lg mx-auto md:mx-0">
                 Tim kami siap membantu Anda. Hubungi kantor desa atau kunjungi
                 halaman kontak untuk informasi lebih lanjut.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
                 <Button 
                   href="/kontak" 
-                  className="group bg-white text-orange-600 hover:bg-orange-50 shadow-xl shadow-black/20 hover:shadow-2xl px-8 py-4 text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1"
+                  className="group bg-white text-orange-600 hover:bg-orange-50 shadow-xl shadow-black/20 hover:shadow-2xl px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto"
                 >
-                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                   Hubungi Kami
                 </Button>
                 <Button 
                   href="/profil" 
                   variant="outline" 
-                  className="group border-2 border-white/50 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm px-8 py-4 text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1"
+                  className="group border-2 border-white/50 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto"
                 >
                   Pelajari Lebih Lanjut
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </div>
