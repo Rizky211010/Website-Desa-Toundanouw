@@ -169,7 +169,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* === DARK MODE === */
+/* === DARK MODE - DISABLED FOR CONSISTENCY === */
+/* Website ini menggunakan light mode saja untuk konsistensi di semua perangkat */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
@@ -190,6 +192,7 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
   }
 }
+*/
 
 /* ============================================
    BASE STYLES
@@ -1145,5 +1148,57 @@ body {
     box-shadow: none;
     border: 1px solid #ddd;
   }
+}
+
+/* ============================================
+   FORCE LIGHT MODE - FIX FOR ALL DEVICES
+   ============================================ */
+
+/* Force color scheme to light */
+:root {
+  color-scheme: light only;
+}
+
+html, body {
+  color-scheme: light;
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+/* Force form elements to use dark text on white background */
+input,
+textarea,
+select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #1f2937 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+  opacity: 1;
+}
+
+/* Labels */
+label {
+  color: #374151 !important;
+}
+
+/* Option elements in select */
+option {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
 }
 
