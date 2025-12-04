@@ -169,7 +169,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* === DARK MODE === */
+/* === DARK MODE - DISABLED FOR CONSISTENCY ===
+   Commented out to ensure consistent light theme across all devices
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f0f0f;
@@ -189,6 +190,24 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
   }
+}
+*/
+
+/* === FORCE LIGHT MODE === */
+:root {
+  color-scheme: light only;
+}
+
+/* Force light colors on form inputs for all devices */
+input, textarea, select {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #1f2937 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
 }
 
 /* ============================================

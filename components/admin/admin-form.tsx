@@ -20,10 +20,10 @@ export function Input({ label, error, helperText, className = "", ...props }: In
       )}
       <input
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
           focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
           disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
-          transition-all
+          transition-all placeholder:text-gray-400
           ${error ? "border-red-300 focus:ring-red-500/20 focus:border-red-500" : "border-gray-200"}
           ${className}
         `}
@@ -53,10 +53,10 @@ export function Textarea({ label, error, helperText, className = "", ...props }:
       )}
       <textarea
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
           focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
           disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
-          transition-all resize-none
+          transition-all resize-none placeholder:text-gray-400
           ${error ? "border-red-300 focus:ring-red-500/20 focus:border-red-500" : "border-gray-200"}
           ${className}
         `}
@@ -94,7 +94,7 @@ export function Select({ label, error, helperText, options, placeholder, classNa
       )}
       <select
         className={`
-          w-full px-4 py-2.5 bg-white border rounded-xl text-sm
+          w-full px-4 py-2.5 bg-white border rounded-xl text-sm text-gray-900
           focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500
           disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed
           transition-all appearance-none cursor-pointer
