@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://website-desa-toundanouw.vercel.app"),
+  metadataBase: new URL("https://websitedesatoundanouw.site"),
   title: {
     default: "Website Resmi Desa Toundanouw",
     template: "%s | Desa Toundanouw",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://website-desa-toundanouw.vercel.app",
+    url: "https://websitedesatoundanouw.site",
     siteName: "Desa Toundanouw",
     title: "Website Resmi Desa Toundanouw",
     description:
